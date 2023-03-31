@@ -17,6 +17,12 @@ function Navbar() {
     };
   }, []);
 
+  const currentUser = {
+    id: 1,
+    username: "john Doe",
+    isSeller: true,
+  };
+
   return (
     <div className={active ? "navbar active" : "navbar"}>
       <div className="container">
@@ -31,9 +37,29 @@ function Navbar() {
           <span>Fiverr Business</span>
           <span>Explore</span>
           <span>English</span>
-          <span>Become a seller</span>
+          {!currentUser?.isSeller && <span>Become a seller</span>}
           <span>Sign In</span>
-          <button>Join</button>
+          {!currentUser && <button>Join</button>}
+          {currentUser && (
+            <div className="user">
+              <img
+                src="https://images.unsplash.com/photo-1680167914371-2d7387f335e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
+                alt=""
+              />
+              <span>{currentUser?.username}</span>
+              <div className="options">
+                {currentUser?.isSeller && (
+                  <>
+                    <span>gig</span>
+                    <span>add new gig</span>
+                  </>
+                )}
+                <span>orders</span>
+                <span>messages</span>
+                <span>logout</span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       {active && (
