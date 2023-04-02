@@ -1,7 +1,12 @@
+import Featured from "../featured/Featured";
 import "./Home.scss";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Featured />
+    </div>
+  );
 }
 
 export default Home;
