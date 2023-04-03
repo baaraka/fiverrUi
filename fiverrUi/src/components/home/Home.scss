@@ -6,6 +6,36 @@
     justify-content: center;
     padding: 100px 60px;
 
+    &.dark {
+      background-color: #0d084d;
+      color: white;
+
+      p {
+        color: white !important;
+        margin-bottom: 20px;
+      }
+
+      .title {
+        color: white;
+        font-weight: 300;
+        font-size: 14px !important;
+      }
+      img {
+        width: 100%;
+      }
+      button {
+        background-color: #1dbf73;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        margin-top: 20px;
+        width: max-content;
+      }
+    }
+
     .container {
       width: 100%;
       display: flex;
