@@ -2,7 +2,8 @@ import Navbar from "./components/navbar/Navbar";
 import "./App.scss";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Footer from "./components/footer/Footer";
-import Home from "./components/home/Home";
+import Gigs from "./pages/gigs/Gigs";
+import Home from "./pages/home/Home";
 
 function App() {
   const Layout = () => {
@@ -23,6 +24,10 @@ function App() {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/gigs",
+          element: <Gigs />,
         },
       ],
     },
