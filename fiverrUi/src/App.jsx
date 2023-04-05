@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Gigs from "./pages/gigs/Gigs";
 import Home from "./pages/home/Home";
+import Gig from "./pages/gig/Gig";
 
 function App() {
   const Layout = () => {
@@ -28,6 +29,10 @@ function App() {
         {
           path: "/gigs",
           element: <Gigs />,
+        },
+        {
+          path: "/gig/123",
+          element: <Gig />,
         },
       ],
     },
