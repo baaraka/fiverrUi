@@ -6,6 +6,7 @@ import Gigs from "./pages/gigs/Gigs";
 import Home from "./pages/home/Home";
 import Gig from "./pages/gig/Gig";
 import MyGigs from "./pages/myGigs/MyGigs";
+import Orders from "./pages/orders/Orders";
 
 function App() {
   const Layout = () => {
@@ -38,6 +39,10 @@ function App() {
         {
           path: "/myGigs",
           element: <MyGigs />,
+        },
+        {
+          path: "/orders",
+          element: <Orders />,
         },
       ],
     },
