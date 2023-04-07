@@ -20,7 +20,7 @@ function Messages() {
           <tr className="active">
             <td>John Doe</td>
             <td>
-              <Link to="/message" className="link">
+              <Link to="/message/123" className="link">
                 {message.substring(0, 70)}...
               </Link>
             </td>
