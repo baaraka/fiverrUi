@@ -1,7 +1,12 @@
 import "./Orders.scss";
-import { Link } from "react-router-dom";
 
 function Orders() {
+  const currentUser = {
+    id: 1,
+    username: "Anna",
+    isSeller: true,
+  };
+
   return (
     <div className="orders">
       <div className="container">
@@ -13,8 +18,8 @@ function Orders() {
             <th>Image</th>
             <th>Title</th>
             <th>Price</th>
-            <th>Orders</th>
-            <th>Action</th>
+            <th>{currentUser?.isSeller ? "Buyer" : "Seller"}</th>
+            <th>Contact</th>
           </tr>
           <tr>
             <td>
@@ -28,22 +33,7 @@ function Orders() {
             <td>88</td>
             <td>123</td>
             <td>
-              <img className="delete" src="/img/delete.png" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img
-                className="image"
-                src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-            </td>
-            <td>Gig1</td>
-            <td>88</td>
-            <td>123</td>
-            <td>
-              <img className="delete" src="/img/delete.png" alt="" />
+              <img className="delete" src="/img/message.png" alt="" />
             </td>
           </tr>
           <tr>
@@ -58,7 +48,7 @@ function Orders() {
             <td>88</td>
             <td>123</td>
             <td>
-              <img className="delete" src="/img/delete.png" alt="" />
+              <img className="delete" src="/img/message.png" alt="" />
             </td>
           </tr>
           <tr>
@@ -73,7 +63,7 @@ function Orders() {
             <td>88</td>
             <td>123</td>
             <td>
-              <img className="delete" src="/img/delete.png" alt="" />
+              <img className="delete" src="/img/message.png" alt="" />
             </td>
           </tr>
           <tr>
@@ -88,7 +78,7 @@ function Orders() {
             <td>88</td>
             <td>123</td>
             <td>
-              <img className="delete" src="/img/delete.png" alt="" />
+              <img className="delete" src="/img/message.png" alt="" />
             </td>
           </tr>
           <tr>
@@ -103,7 +93,7 @@ function Orders() {
             <td>88</td>
             <td>123</td>
             <td>
-              <img className="delete" src="/img/delete.png" alt="" />
+              <img className="delete" src="/img/message.png" alt="" />
             </td>
           </tr>
           <tr>
@@ -118,7 +108,22 @@ function Orders() {
             <td>88</td>
             <td>123</td>
             <td>
-              <img className="delete" src="/img/delete.png" alt="" />
+              <img className="delete" src="/img/message.png" alt="" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                className="image"
+                src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt=""
+              />
+            </td>
+            <td>Gig1</td>
+            <td>88</td>
+            <td>123</td>
+            <td>
+              <img className="delete" src="/img/message.png" alt="" />
             </td>
           </tr>
         </table>
