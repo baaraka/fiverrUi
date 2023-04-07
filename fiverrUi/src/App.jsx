@@ -7,6 +7,7 @@ import Home from "./pages/home/Home";
 import Gig from "./pages/gig/Gig";
 import MyGigs from "./pages/myGigs/MyGigs";
 import Orders from "./pages/orders/Orders";
+import Messages from "./pages/messages/Messages";
 
 function App() {
   const Layout = () => {
@@ -43,6 +44,10 @@ function App() {
         {
           path: "/orders",
           element: <Orders />,
+        },
+        {
+          path: "/messages",
+          element: <Messages />,
         },
       ],
     },
