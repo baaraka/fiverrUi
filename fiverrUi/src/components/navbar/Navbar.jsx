@@ -20,11 +20,7 @@ function Navbar() {
     };
   }, []);
 
-  const currentUser = {
-    id: 1,
-    username: "john Doe",
-    isSeller: true,
-  };
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
@@ -45,10 +41,7 @@ function Navbar() {
           {!currentUser && <button>Join</button>}
           {currentUser && (
             <div className="user" onClick={() => setOpen(!open)}>
-              <img
-                src="https://images.unsplash.com/photo-1680167914371-2d7387f335e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
-                alt=""
-              />
+              <img src={currentUser.img || "/img/noavatar.jpg"} alt="" />
               <span>{currentUser?.username}</span>
               {open && (
                 <div className="options">
