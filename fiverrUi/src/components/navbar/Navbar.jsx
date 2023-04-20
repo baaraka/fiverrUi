@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Navbar.scss";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import newRequest from "../../utils/newRequest";
 
 function Navbar() {
   const [active, setActive] = useState(false);
@@ -21,6 +22,18 @@ function Navbar() {
   }, []);
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await newRequest.post("/auth/logout");
+      localStorage.setItem("currentUser", null);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
@@ -61,7 +74,7 @@ function Navbar() {
                   <Link to="/messages" className="link">
                     messages
                   </Link>
-                  <Link to="/logout" className="link">
+                  <Link onClick={handleLogout} className="link">
                     logout
                   </Link>
                 </div>
